@@ -71,11 +71,8 @@ def on_message(client, userdata, message):
 
     stationNum = message.topic[6]
 
-    reff = db.reference("point_2/temp")
-
     toSend = refer["point_" + stationNum][message.topic[8:len(message.topic)]]
     toSend.set(msg)
-    #reff.set(msg)
 
 # Create client and define callbacks
 client = mqtt.Client()
